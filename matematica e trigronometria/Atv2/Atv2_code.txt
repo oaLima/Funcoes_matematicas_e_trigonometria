@@ -1,0 +1,20 @@
+int laz = 9;
+float ang = 0;
+
+void setup() {
+  pinMode(laz, OUTPUT);
+}
+
+void loop() {
+  // Brilho do led
+  float valor = sin(ang) * 127.5 + 127.5;
+  
+  analogWrite(laz, valor);
+
+  // Aumento de angulo
+  ang += 0.1;
+
+  if (ang > 2 * PI) ang = 0;
+
+  delay(30);
+}

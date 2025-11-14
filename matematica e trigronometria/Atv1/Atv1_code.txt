@@ -1,0 +1,28 @@
+// C++ code
+//
+void setup() {
+  Serial.begin(9000);
+}
+
+void loop() {
+  // leitura do potenciometro
+  int l1 = analogRead(A0);
+  int l2 = analogRead(A0);
+  int l3 = analogRead(A0);
+
+  // Calculo da media
+  float media = (l1 + l2 + l3) / 3.0;
+
+  // Calculo da raiz
+  float raiz = sqrt(media);
+
+  // Resultados
+  Serial.print("Media: ");
+  Serial.println(round(media));  
+
+  Serial.print("Raiz quadrada da media: ");
+  Serial.println(ceil(raiz));    
+
+  Serial.println("-------------------------");
+  delay(2000);
+}
